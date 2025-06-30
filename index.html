@@ -196,6 +196,36 @@
     closeBtn.style.display = 'none';
   };
 </script>
-  
+  <!-- 🔵 Chatbot Dymek w rogu -->
+<style>
+  #chatbot-button {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+</style>
+
+<button id="chatbot-button" title="Porozmawiaj z chatbotem">💬</button>
+
+<script>
+  document.getElementById('chatbot-button').addEventListener('click', () => {
+    window.open(
+      'https://Pawel21W-formularz-ofertowy.hf.space',
+      'Chatbot',
+      'width=420,height=650,resizable=yes,scrollbars=yes'
+    );
+  });
+</script>
+
 </body>
 </html>
