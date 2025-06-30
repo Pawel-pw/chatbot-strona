@@ -128,5 +128,74 @@
   <footer>
     &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
   </footer>
+
+  <style>
+  #chatbot-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  #chatbot-frame {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 360px;
+    height: 500px;
+    border: none;
+    border-radius: 15px;
+    display: none;
+    z-index: 999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  }
+
+  #close-chatbot {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 18px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+</style>
+
+<!-- 🔘 Chatbot Button -->
+<button id="chatbot-button">💬</button>
+
+<!-- 💬 Chatbot Iframe -->
+<div id="chatbot-container" style="position: relative;">
+  <iframe id="chatbot-frame" src="https://Pawel21W-formularz-ofertowy.hf.space" allow="fullscreen"></iframe>
+  <button id="close-chatbot" style="display: none;">✖</button>
+</div>
+
+<script>
+  const button = document.getElementById('chatbot-button');
+  const iframe = document.getElementById('chatbot-frame');
+  const closeBtn = document.getElementById('close-chatbot');
+
+  button.onclick = () => {
+    iframe.style.display = 'block';
+    closeBtn.style.display = 'block';
+  };
+
+  closeBtn.onclick = () => {
+    iframe.style.display = 'none';
+    closeBtn.style.display = 'none';
+  };
+</script>
+  
 </body>
 </html>
