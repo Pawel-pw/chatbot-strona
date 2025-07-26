@@ -74,6 +74,21 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
+    #chatbot-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
@@ -122,110 +137,31 @@
 
   <section>
     <h2>Porozmawiaj z naszym chatbotem</h2>
-    <iframe src="https://huggingface.co/spaces/pawel/chatbot-fryzjerski" width="100%" height="600" frameborder="0"></iframe>
+    <iframe 
+      src="https://pawel21w-formularz-ofertowy.hf.space" 
+      frameborder="0" 
+      width="850" 
+      height="450"
+      style="max-width: 100%; border: 2px solid #ccc; border-radius: 10px;"
+      allowfullscreen>
+    </iframe>
   </section>
 
   <footer>
     &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
   </footer>
 
-  <style>
-  #chatbot-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #6c63ff;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 1000;
-  }
+  <!-- 🔘 Dymek chatbota w rogu -->
+  <button id="chatbot-button" title="Porozmawiaj z chatbotem">💬</button>
 
-  #chatbot-frame {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
-    width: 360px;
-    height: 500px;
-    border: none;
-    border-radius: 15px;
-    display: none;
-    z-index: 999;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-  }
-
-  #close-chatbot {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 18px;
-    color: #fff;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-  }
-</style>
-
-<!-- 🔘 Chatbot Button -->
-<button id="chatbot-button">💬</button>
-
-<!-- 💬 Chatbot Iframe -->
-<div id="chatbot-container" style="position: relative;">
-  <iframe id="chatbot-frame" src="https://Pawel21W-formularz-ofertowy.hf.space" allow="fullscreen"></iframe>
-  <button id="close-chatbot" style="display: none;">✖</button>
-</div>
-
-<script>
-  const button = document.getElementById('chatbot-button');
-  const iframe = document.getElementById('chatbot-frame');
-  const closeBtn = document.getElementById('close-chatbot');
-
-  button.onclick = () => {
-    iframe.style.display = 'block';
-    closeBtn.style.display = 'block';
-  };
-
-  closeBtn.onclick = () => {
-    iframe.style.display = 'none';
-    closeBtn.style.display = 'none';
-  };
-</script>
-  <!-- 🔵 Chatbot Dymek w rogu -->
-<style>
-  #chatbot-button {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #4f46e5;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-</style>
-
-<button id="chatbot-button" title="Porozmawiaj z chatbotem">💬</button>
-
-<script>
-  document.getElementById('chatbot-button').addEventListener('click', () => {
-    window.open(
-      'https://Pawel21W-formularz-ofertowy.hf.space',
-      'Chatbot',
-      'width=420,height=650,resizable=yes,scrollbars=yes'
-    );
-  });
-</script>
-
+  <script>
+    document.getElementById('chatbot-button').addEventListener('click', () => {
+      window.open(
+        'https://pawel21w-formularz-ofertowy.hf.space',
+        'Chatbot',
+        'width=420,height=650,resizable=yes,scrollbars=yes'
+      );
+    });
+  </script>
 </body>
 </html>
