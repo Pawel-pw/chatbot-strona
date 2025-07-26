@@ -54,10 +54,11 @@
       max-width: 400px;
       margin: auto;
     }
-    input, textarea {
+    input, select, textarea {
       padding: 0.8rem;
       border-radius: 6px;
       border: 1px solid #ccc;
+      font-size: 1rem;
     }
     button {
       padding: 0.8rem;
@@ -66,6 +67,7 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 1rem;
     }
     footer {
       text-align: center;
@@ -73,21 +75,6 @@
       color: white;
       padding: 1rem;
       font-size: 0.9rem;
-    }
-    #chatbot-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -120,11 +107,34 @@
   </section>
 
   <section>
-    <h2>Umów wizytę</h2>
+    <h2>Umów się na wizytę</h2>
     <form>
-      <input type="text" placeholder="Imię i nazwisko" required>
-      <input type="email" placeholder="Adres e-mail" required>
-      <textarea placeholder="Jaką usługą jesteś zainteresowany?" required></textarea>
+      <label>Jaką usługą jesteś zainteresowany?</label>
+      <select required>
+        <option value="">-- Wybierz usługę --</option>
+        <option>Strzyżenie damskie</option>
+        <option>Strzyżenie męskie</option>
+        <option>Koloryzacja</option>
+        <option>Stylizacja ślubna</option>
+        <option>Modelowanie</option>
+        <option>Inna usługa</option>
+      </select>
+
+      <label>Preferowana data wizyty</label>
+      <input type="date" required>
+
+      <label>Twoje imię i nazwisko</label>
+      <input type="text" required>
+
+      <label>Adres e-mail</label>
+      <input type="email" required>
+
+      <label>Numer telefonu (opcjonalnie)</label>
+      <input type="tel">
+
+      <label>Dodatkowe uwagi</label>
+      <textarea placeholder="Napisz, jeśli masz specjalne życzenia..."></textarea>
+
       <button type="submit">Wyślij zgłoszenie</button>
     </form>
   </section>
@@ -135,33 +145,8 @@
     <iframe src="https://maps.google.com/maps?q=Warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" frameborder="0" style="border:0;"></iframe>
   </section>
 
-  <section>
-    <h2>Porozmawiaj z naszym chatbotem</h2>
-    <iframe 
-      src="https://pawel21w-formularz-ofertowy.hf.space" 
-      frameborder="0" 
-      width="850" 
-      height="450"
-      style="max-width: 100%; border: 2px solid #ccc; border-radius: 10px;"
-      allowfullscreen>
-    </iframe>
-  </section>
-
   <footer>
     &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
   </footer>
-
-  <!-- 🔘 Dymek chatbota w rogu -->
-  <button id="chatbot-button" title="Porozmawiaj z chatbotem">💬</button>
-
-  <script>
-    document.getElementById('chatbot-button').addEventListener('click', () => {
-      window.open(
-        'https://pawel21w-formularz-ofertowy.hf.space',
-        'Chatbot',
-        'width=420,height=650,resizable=yes,scrollbars=yes'
-      );
-    });
-  </script>
 </body>
 </html>
