@@ -6,14 +6,7 @@
   <title>Studio Fryzjerskie Blask</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fff8f0;
-      color: #333;
-    }
-
-    /* NAVBAR */
+    /* 🔷 Navbar */
     .navbar {
       background-color: #2c3e50;
       color: white;
@@ -23,7 +16,6 @@
       z-index: 1000;
       width: 100%;
     }
-
     .navbar-container {
       max-width: 1000px;
       margin: 0 auto;
@@ -32,57 +24,56 @@
       justify-content: space-between;
       align-items: center;
     }
-
     .logo {
       font-weight: 600;
       font-size: 1.3rem;
     }
-
     .navbar-links {
       list-style: none;
       display: flex;
       gap: 1.5rem;
     }
-
     .navbar-links a {
       color: white;
       text-decoration: none;
       font-weight: 500;
     }
-
     .navbar-links a:hover {
       text-decoration: underline;
     }
 
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
     header {
       background-color: #2c3e50;
       color: white;
       padding: 2rem;
       text-align: center;
     }
-
     header img {
       width: 80px;
     }
-
     header h1 {
       margin-top: 0.5rem;
       font-size: 2.2rem;
     }
-
     section {
       max-width: 900px;
       margin: auto;
       padding: 2rem 1rem;
     }
 
+    /* 🔶 Karty usług + efekt hover */
     .services {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       justify-content: center;
     }
-
     .service {
       background-color: #f2e9e4;
       padding: 1.2rem;
@@ -90,8 +81,12 @@
       width: 250px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    .service:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
     .service h3 {
       margin-top: 0;
     }
@@ -103,13 +98,11 @@
       max-width: 400px;
       margin: auto;
     }
-
     input, textarea, select {
       padding: 0.8rem;
       border-radius: 6px;
       border: 1px solid #ccc;
     }
-
     button {
       padding: 0.8rem;
       background-color: #2c3e50;
@@ -118,13 +111,11 @@
       border-radius: 6px;
       cursor: pointer;
     }
-
     iframe {
       border: none;
       border-radius: 10px;
       width: 100%;
     }
-
     footer {
       text-align: center;
       background-color: #2c3e50;
@@ -136,7 +127,6 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar-container">
       <span class="logo">Studio Fryzjerskie Blask</span>
@@ -156,111 +146,6 @@
     <p>Twoje włosy zasługują na najlepszą opiekę</p>
   </header>
 
-  <!-- SEK. O NAS -->
   <section id="onas">
     <h2>O nas</h2>
-    <p style="max-width: 700px; margin: auto; line-height: 1.6; font-size: 1.05rem;">
-      W Studio Fryzjerskim Blask wierzymy, że każda fryzura opowiada historię – o Tobie, Twoim stylu i pewności siebie. 
-      Nasz zespół to doświadczeni styliści z pasją do piękna, którzy nieustannie podążają za trendami, 
-      jednocześnie zachowując indywidualne podejście do każdego klienta. 
-      Dbamy o atmosferę zaufania, komfortu i profesjonalizmu. U nas Twoje włosy są w najlepszych rękach!
-    </p>
-  </section>
-
-  <!-- SEK. USŁUGI -->
-  <section id="uslugi">
-    <h2>Nasze usługi</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Strzyżenie damskie</h3>
-        <p>Stylowe cięcia dopasowane do urody i charakteru.</p>
-        <strong>od 90 zł</strong>
-      </div>
-      <div class="service">
-        <h3>Strzyżenie męskie</h3>
-        <p>Nowoczesne fryzury i klasyczne cięcia.</p>
-        <strong>od 60 zł</strong>
-      </div>
-      <div class="service">
-        <h3>Koloryzacja</h3>
-        <p>Profesjonalne farbowanie i tonowanie włosów.</p>
-        <strong>od 160 zł</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEK. UMÓW SIĘ -->
-  <section id="umow">
-    <h2>Umów się na wizytę</h2>
-    <form>
-      <label>Jaką usługą jesteś zainteresowany?</label>
-      <select required>
-        <option value="">-- Wybierz usługę --</option>
-        <option>Strzyżenie damskie</option>
-        <option>Strzyżenie męskie</option>
-        <option>Koloryzacja</option>
-        <option>Stylizacja ślubna</option>
-        <option>Modelowanie</option>
-        <option>Inna usługa</option>
-      </select>
-
-      <label>Preferowana data wizyty</label>
-      <input type="date" required>
-
-      <label>Twoje imię i nazwisko</label>
-      <input type="text" required>
-
-      <label>Adres e-mail</label>
-      <input type="email" required>
-
-      <label>Numer telefonu (opcjonalnie)</label>
-      <input type="tel">
-
-      <label>Dodatkowe uwagi</label>
-      <textarea placeholder="Napisz, jeśli masz specjalne życzenia..."></textarea>
-
-      <button type="submit">Wyślij zgłoszenie</button>
-    </form>
-  </section>
-
-  <!-- SEK. MAPA -->
-  <section id="lokalizacja">
-    <h2>Odwiedź nas</h2>
-    <p>ul. Jasna 7, 00-001 Warszawa</p>
-    <iframe src="https://maps.google.com/maps?q=Warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" height="300"></iframe>
-  </section>
-
-  <!-- SEK. CHATBOT - DYMKIEM -->
-  <section id="kontakt"></section>
-  <button id="chatbot-button" title="Umów wizytę przez formularz">💬</button>
-  <script>
-    const chatbotBtn = document.getElementById('chatbot-button');
-    chatbotBtn.style.position = 'fixed';
-    chatbotBtn.style.bottom = '25px';
-    chatbotBtn.style.right = '25px';
-    chatbotBtn.style.backgroundColor = '#4f46e5';
-    chatbotBtn.style.color = 'white';
-    chatbotBtn.style.border = 'none';
-    chatbotBtn.style.borderRadius = '50%';
-    chatbotBtn.style.width = '60px';
-    chatbotBtn.style.height = '60px';
-    chatbotBtn.style.fontSize = '28px';
-    chatbotBtn.style.cursor = 'pointer';
-    chatbotBtn.style.zIndex = '1000';
-    chatbotBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
-    chatbotBtn.addEventListener('click', () => {
-      window.open(
-        'https://pawel21w-formularz-ofertowy.hf.space',
-        'Chatbot',
-        'width=420,height=650,resizable=yes,scrollbars=yes'
-      );
-    });
-  </script>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
-  </footer>
-
-</body>
-</html>
+    <p>Jesteśmy zespołem pasjonatów fryzjerstwa z wieloletnim doświadczeniem. Wierzymy, że piękna fryzura zaczyna się od
