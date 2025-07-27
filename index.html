@@ -6,10 +6,6 @@
   <title>Studio Fryzjerskie Blask</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -45,8 +41,6 @@
       list-style: none;
       display: flex;
       gap: 1.5rem;
-      margin: 0;
-      padding: 0;
     }
 
     .navbar-links a {
@@ -95,6 +89,12 @@
       width: 250px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
     form {
@@ -133,28 +133,10 @@
       padding: 1rem;
       font-size: 0.9rem;
     }
-
-    /* Dymek chatbot */
-    #chatbot-button {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #4f46e5;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      font-size: 28px;
-      cursor: pointer;
-      z-index: 1000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
   </style>
 </head>
 <body>
 
-  <!-- 🔝 Sticky Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
       <span class="logo">Studio Fryzjerskie Blask</span>
@@ -169,18 +151,16 @@
   </nav>
 
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/5977/5977730.png" alt="logo">
     <h1>Studio Fryzjerskie Blask</h1>
     <p>Twoje włosy zasługują na najlepszą opiekę</p>
   </header>
 
-  <!-- ℹ️ O nas -->
   <section id="onas">
     <h2>O nas</h2>
-    <p>W Studio Fryzjerskie Blask pasjonujemy się pięknem i indywidualnym podejściem do każdego klienta. Nasz doświadczony zespół stylistów dba o to, aby każda wizyta była nie tylko usługą, ale również chwilą relaksu. Wierzymy w jakość, nowoczesność i serdeczną atmosferę.</p>
+    <p>Jesteśmy zespołem pasjonatów fryzjerstwa z wieloletnim doświadczeniem. Wierzymy, że piękna fryzura zaczyna się od zaufania i indywidualnego podejścia.</p>
   </section>
 
-  <!-- 💇‍♀️ Usługi -->
   <section id="uslugi">
     <h2>Nasze usługi</h2>
     <div class="services">
@@ -202,7 +182,6 @@
     </div>
   </section>
 
-  <!-- 📅 Umów wizytę -->
   <section id="umow">
     <h2>Umów się na wizytę</h2>
     <form>
@@ -236,23 +215,32 @@
     </form>
   </section>
 
-  <!-- 📍 Lokalizacja -->
   <section id="lokalizacja">
     <h2>Odwiedź nas</h2>
     <p>ul. Jasna 7, 00-001 Warszawa</p>
     <iframe src="https://maps.google.com/maps?q=Warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" height="300"></iframe>
   </section>
 
-  <!-- 🤖 Kontakt / Chatbot -->
-  <section id="kontakt">
-    <h2>Porozmawiaj z naszym chatbotem</h2>
-    <p>Kliknij w dymek w prawym dolnym rogu, aby wypełnić formularz i umówić się na wizytę!</p>
-  </section>
-
-  <!-- 💬 Chatbot Button -->
+  <!-- Dymek Chatbota -->
   <button id="chatbot-button" title="Umów wizytę przez formularz">💬</button>
+
   <script>
-    document.getElementById('chatbot-button').addEventListener('click', () => {
+    const chatbotBtn = document.getElementById('chatbot-button');
+    chatbotBtn.style.position = 'fixed';
+    chatbotBtn.style.bottom = '25px';
+    chatbotBtn.style.right = '25px';
+    chatbotBtn.style.backgroundColor = '#4f46e5';
+    chatbotBtn.style.color = 'white';
+    chatbotBtn.style.border = 'none';
+    chatbotBtn.style.borderRadius = '50%';
+    chatbotBtn.style.width = '60px';
+    chatbotBtn.style.height = '60px';
+    chatbotBtn.style.fontSize = '28px';
+    chatbotBtn.style.cursor = 'pointer';
+    chatbotBtn.style.zIndex = '1000';
+    chatbotBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+
+    chatbotBtn.addEventListener('click', () => {
       window.open(
         'https://pawel21w-formularz-ofertowy.hf.space',
         'Chatbot',
