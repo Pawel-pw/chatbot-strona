@@ -6,6 +6,10 @@
   <title>Studio Fryzjerskie Blask</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -13,7 +17,6 @@
       color: #333;
     }
 
-    /* Navbar */
     .navbar {
       background-color: #2c3e50;
       color: white;
@@ -76,7 +79,6 @@
       max-width: 900px;
       margin: auto;
       padding: 2rem 1rem;
-      scroll-margin-top: 80px; /* Działa z navbar */
     }
 
     .services {
@@ -93,12 +95,6 @@
       width: 250px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .service:hover {
-      transform: scale(1.03);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
     }
 
     form {
@@ -138,7 +134,7 @@
       font-size: 0.9rem;
     }
 
-    /* Chatbot button */
+    /* Dymek chatbot */
     #chatbot-button {
       position: fixed;
       bottom: 25px;
@@ -158,12 +154,12 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- 🔝 Sticky Navbar -->
   <nav class="navbar">
     <div class="navbar-container">
       <span class="logo">Studio Fryzjerskie Blask</span>
       <ul class="navbar-links">
-        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#onas">O nas</a></li>
         <li><a href="#uslugi">Usługi</a></li>
         <li><a href="#umow">Umów wizytę</a></li>
         <li><a href="#lokalizacja">Lokalizacja</a></li>
@@ -172,20 +168,19 @@
     </div>
   </nav>
 
-  <!-- HEADER -->
   <header>
     <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="logo">
     <h1>Studio Fryzjerskie Blask</h1>
     <p>Twoje włosy zasługują na najlepszą opiekę</p>
   </header>
 
-  <!-- O NAS -->
-  <section id="o-nas">
+  <!-- ℹ️ O nas -->
+  <section id="onas">
     <h2>O nas</h2>
-    <p>Jesteśmy zespołem pasjonatów fryzjerstwa z wieloletnim doświadczeniem. Wierzymy, że piękna fryzura zaczyna się od zaufania i indywidualnego podejścia.</p>
+    <p>W Studio Fryzjerskie Blask pasjonujemy się pięknem i indywidualnym podejściem do każdego klienta. Nasz doświadczony zespół stylistów dba o to, aby każda wizyta była nie tylko usługą, ale również chwilą relaksu. Wierzymy w jakość, nowoczesność i serdeczną atmosferę.</p>
   </section>
 
-  <!-- USŁUGI -->
+  <!-- 💇‍♀️ Usługi -->
   <section id="uslugi">
     <h2>Nasze usługi</h2>
     <div class="services">
@@ -207,7 +202,7 @@
     </div>
   </section>
 
-  <!-- UMÓW WIZYTĘ -->
+  <!-- 📅 Umów wizytę -->
   <section id="umow">
     <h2>Umów się na wizytę</h2>
     <form>
@@ -241,20 +236,23 @@
     </form>
   </section>
 
-  <!-- LOKALIZACJA -->
+  <!-- 📍 Lokalizacja -->
   <section id="lokalizacja">
     <h2>Odwiedź nas</h2>
     <p>ul. Jasna 7, 00-001 Warszawa</p>
     <iframe src="https://maps.google.com/maps?q=Warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" height="300"></iframe>
   </section>
 
-  <!-- DYMKA CHATBOTA (przycisk + logika) -->
-  <section id="kontakt"></section>
-  <button id="chatbot-button" title="Umów wizytę przez formularz">💬</button>
+  <!-- 🤖 Kontakt / Chatbot -->
+  <section id="kontakt">
+    <h2>Porozmawiaj z naszym chatbotem</h2>
+    <p>Kliknij w dymek w prawym dolnym rogu, aby wypełnić formularz i umówić się na wizytę!</p>
+  </section>
 
+  <!-- 💬 Chatbot Button -->
+  <button id="chatbot-button" title="Umów wizytę przez formularz">💬</button>
   <script>
-    const chatbotBtn = document.getElementById('chatbot-button');
-    chatbotBtn.addEventListener('click', () => {
+    document.getElementById('chatbot-button').addEventListener('click', () => {
       window.open(
         'https://pawel21w-formularz-ofertowy.hf.space',
         'Chatbot',
@@ -263,7 +261,6 @@
     });
   </script>
 
-  <!-- STOPKA -->
   <footer>
     &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
   </footer>
