@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Studio Fryzjerskie Blask</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -148,15 +148,33 @@
     <iframe src="https://maps.google.com/maps?q=Warszawa&t=&z=13&ie=UTF8&iwloc=&output=embed" height="300"></iframe>
   </section>
 
-  <section>
-    <h2>Porozmawiaj z naszym chatbotem</h2>
-    <iframe
-      src="https://pawel21w-formularz-ofertowy.hf.space"
-      width="100%"
-      height="600"
-      allow="fullscreen">
-    </iframe>
-  </section>
+  <!-- Dymek Chatbota -->
+  <button id="chatbot-button" title="Umów wizytę przez formularz">💬</button>
+
+  <script>
+    const chatbotBtn = document.getElementById('chatbot-button');
+    chatbotBtn.style.position = 'fixed';
+    chatbotBtn.style.bottom = '25px';
+    chatbotBtn.style.right = '25px';
+    chatbotBtn.style.backgroundColor = '#4f46e5';
+    chatbotBtn.style.color = 'white';
+    chatbotBtn.style.border = 'none';
+    chatbotBtn.style.borderRadius = '50%';
+    chatbotBtn.style.width = '60px';
+    chatbotBtn.style.height = '60px';
+    chatbotBtn.style.fontSize = '28px';
+    chatbotBtn.style.cursor = 'pointer';
+    chatbotBtn.style.zIndex = '1000';
+    chatbotBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+
+    chatbotBtn.addEventListener('click', () => {
+      window.open(
+        'https://pawel21w-formularz-ofertowy.hf.space',
+        'Chatbot',
+        'width=420,height=650,resizable=yes,scrollbars=yes'
+      );
+    });
+  </script>
 
   <footer>
     &copy; 2025 Studio Fryzjerskie Blask • Wszelkie prawa zastrzeżone
